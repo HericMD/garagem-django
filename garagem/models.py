@@ -32,6 +32,7 @@ class Marca(models.Model):
         return self.nome.upper()
 
 class Veiculo(models.Model):
+    nome = models.CharField(max_length=50)
     marca = models.ForeignKey(Marca, on_delete=models.PROTECT, related_name="marca")
     categoria = models.ForeignKey(Categoria, on_delete=models.PROTECT, related_name="categoria")
     cor = models.ForeignKey(Cor, on_delete=models.PROTECT, related_name="cor")
