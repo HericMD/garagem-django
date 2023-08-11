@@ -1,6 +1,6 @@
 from django.db import models
 from garagem.models import Cor, Acessorio, Modelo
-
+from uploader.models import Image
 
 class Veiculo(models.Model):
     descricao = models.CharField(max_length=50)
@@ -11,6 +11,15 @@ class Veiculo(models.Model):
         max_digits=10, decimal_places=2, blank=True, null=True, default=0
     )
     acessorios = models.ManyToManyField(Acessorio, related_name="veiculos")
+    imagem = models.ForeignKey(
+        Image,
+        related_name="+",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        default=None,
+    )
+
 
     def __str__(self):
         return f"{self.descricao} {self.modelo} {self.ano} {self.cor}"
