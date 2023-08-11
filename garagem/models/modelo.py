@@ -1,4 +1,5 @@
 from django.db import models
+
 from garagem.models import Categoria, Marca
 
 class Modelo(models.Model):
