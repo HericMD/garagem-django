@@ -17,8 +17,11 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "corsheaders",
     "rest_framework",
+    "usuario",
     "garagem",
 ]
+
+AUTH_USER_MODEL = "usuario.Usuario"
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
