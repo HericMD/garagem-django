@@ -11,15 +11,13 @@ class Veiculo(models.Model):
         max_digits=10, decimal_places=2, blank=True, null=True, default=0
     )
     acessorios = models.ManyToManyField(Acessorio, related_name="veiculos")
-    imagem = models.ForeignKey(
+    imagem = models.ManyToManyField(
         Image,
         related_name="+",
-        on_delete=models.CASCADE,
         null=True,
         blank=True,
         default=None,
     )
-
 
     def __str__(self):
         return f"{self.descricao} {self.modelo} {self.ano} {self.cor}"
