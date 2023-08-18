@@ -14,9 +14,6 @@ class Veiculo(models.Model):
     imagem = models.ManyToManyField(
         Image,
         related_name="+",
-        null=True,
-        blank=True,
-        default=None,
     )
 
     def __str__(self):

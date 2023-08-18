@@ -23,6 +23,7 @@ INSTALLED_APPS = [
     "usuario",
     "uploader",
     "garagem",
+    "django_extensions",
 ]
 
 REST_FRAMEWORK = {
